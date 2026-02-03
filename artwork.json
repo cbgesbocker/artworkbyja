@@ -1,0 +1,31 @@
+{
+  "artist": {
+    "name": "Jake Allen",
+    "email": "studioja@yahoo.com",
+    "bio": "Jake Allen is an artist exploring [themes]. With a passion for [medium/style], their work captures [unique perspective].",
+    "location": "[Your Location]"
+  },
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Piece Title",
+      "medium": "Medium, Year",
+      "image": "placeholder-1.jpg",
+      "description": "Optional description"
+    },
+    {
+      "id": 2,
+      "title": "Piece Title",
+      "medium": "Medium, Year",
+      "image": "placeholder-2.jpg",
+      "description": "Optional description"
+    },
+    {
+      "id": 3,
+      "title": "Piece Title",
+      "medium": "Medium, Year",
+      "image": "placeholder-3.jpg",
+      "description": "Optional description"
+    }
+  ]
+}

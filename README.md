@@ -1,12 +1,32 @@
-# Artwork by JA
+# Artwork by Jake Allen
 
-Portfolio website for JA's artwork.
+Portfolio website for Jake Allen's artwork.
 
 🌐 **Live site:** https://artworkbyja.com
 
-## Local Development
+## Quick Start
 
-Just open `index.html` in a browser, or use a local server:
+### Adding New Artwork (Super Easy!)
+
+1. **Add the image** to the `images/` folder
+   - Name it something simple (e.g., `painting-1.jpg`)
+
+2. **Edit `artwork.json`** and add an entry to the `"gallery"` array:
+   ```json
+   {
+     "id": 4,
+     "title": "My Artwork Title",
+     "medium": "Oil on canvas, 2026",
+     "image": "painting-1.jpg",
+     "description": "Optional description"
+   }
+   ```
+
+3. **Done!** The image will appear on the website automatically.
+
+That's it. No HTML editing needed.
+
+## Local Development
 
 ```bash
 # Python
@@ -18,36 +38,51 @@ npx serve
 
 Then visit http://localhost:8000
 
-## Adding Artwork
-
-1. Add images to the `images/` folder
-2. Edit `index.html` — find the gallery section and update:
-   - Image `src` paths
-   - Artwork titles
-   - Medium/year info
-
-## Structure
+## File Structure
 
 ```
-├── index.html      # Main page
+ArtworkByJA/
+├── index.html          # Main page (no editing needed for artwork)
+├── artwork.json        # All content lives here ← EDIT THIS
 ├── css/
-│   └── style.css   # Styles
-├── images/         # Artwork images
-├── CNAME           # Custom domain config
+│   └── style.css       # Styling
+├── images/             # Put artwork images here
+├── CNAME               # Custom domain config
 └── README.md
 ```
 
-## Customization
+## Customizing Content
 
-- **Colors:** Edit CSS variables in `css/style.css` (`:root` section)
-- **Fonts:** Change Google Fonts link in `index.html`
-- **Content:** Edit text directly in `index.html`
+### Gallery
+- Add/remove pieces in `artwork.json` under `"gallery"`
+
+### Artist Bio
+- Edit `artwork.json` → `"artist"` → `"bio"`
+
+### Contact Info
+- Email is already set to `studioja@yahoo.com` (update in `artwork.json` if needed)
+
+### Colors & Styling
+- Edit `css/style.css` (CSS variables in `:root` section)
+
+### Fonts
+- Edit the Google Fonts link in `index.html`
 
 ## Deployment
 
-Hosted on GitHub Pages. Push to `main` branch to deploy.
+Hosted on GitHub Pages. Just push to `main` branch:
 
-DNS records for artworkbyja.com:
+```bash
+git add .
+git commit -m "Updated gallery"
+git push origin main
+```
+
+Changes appear live in ~30 seconds.
+
+## DNS Setup
+
+Custom domain `artworkbyja.com` configured with:
 
 ```
 Type: A
@@ -62,3 +97,7 @@ Type: CNAME
 Name: www
 Value: <username>.github.io
 ```
+
+---
+
+Questions? Just edit `artwork.json` and push. The site will handle the rest.

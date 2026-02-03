@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artwork by JA</title>
+    <title>Artwork by Jake Allen</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,67 +23,23 @@
 
     <main>
         <section id="hero">
-            <h1>Artwork by JA</h1>
-            <p>Original paintings and illustrations</p>
+            <h1>Jake Allen</h1>
+            <p>Original artwork & illustrations</p>
         </section>
 
         <section id="gallery">
             <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <!-- Replace these with actual artwork -->
-                <div class="artwork">
-                    <img src="images/placeholder-1.jpg" alt="Artwork 1">
-                    <div class="artwork-info">
-                        <h3>Piece Title</h3>
-                        <p>Medium, Year</p>
-                    </div>
-                </div>
-                <div class="artwork">
-                    <img src="images/placeholder-2.jpg" alt="Artwork 2">
-                    <div class="artwork-info">
-                        <h3>Piece Title</h3>
-                        <p>Medium, Year</p>
-                    </div>
-                </div>
-                <div class="artwork">
-                    <img src="images/placeholder-3.jpg" alt="Artwork 3">
-                    <div class="artwork-info">
-                        <h3>Piece Title</h3>
-                        <p>Medium, Year</p>
-                    </div>
-                </div>
-                <div class="artwork">
-                    <img src="images/placeholder-4.jpg" alt="Artwork 4">
-                    <div class="artwork-info">
-                        <h3>Piece Title</h3>
-                        <p>Medium, Year</p>
-                    </div>
-                </div>
-                <div class="artwork">
-                    <img src="images/placeholder-5.jpg" alt="Artwork 5">
-                    <div class="artwork-info">
-                        <h3>Piece Title</h3>
-                        <p>Medium, Year</p>
-                    </div>
-                </div>
-                <div class="artwork">
-                    <img src="images/placeholder-6.jpg" alt="Artwork 6">
-                    <div class="artwork-info">
-                        <h3>Piece Title</h3>
-                        <p>Medium, Year</p>
-                    </div>
-                </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Populated by JavaScript -->
             </div>
         </section>
 
         <section id="about">
             <h2>About the Artist</h2>
             <div class="about-content">
-                <img src="images/artist.jpg" alt="JA" class="artist-photo">
+                <img src="images/artist.jpg" alt="Jake Allen" class="artist-photo">
                 <div class="about-text">
-                    <p>JA is an artist based in [Location]. Their work explores [themes, subjects, inspirations].</p>
-                    <p>With a background in [background], JA creates [type of work] that [what makes it unique].</p>
-                    <p>Work is available for purchase and commission. For inquiries, please get in touch.</p>
+                    <p id="artistBio">Loading artist info...</p>
                 </div>
             </div>
         </section>
@@ -92,7 +48,11 @@
             <h2>Contact</h2>
             <div class="contact-content">
                 <p>Interested in purchasing a piece or commissioning work?</p>
-                <a href="mailto:contact@artworkbyja.com" class="btn">Get in Touch</a>
+                <a href="mailto:studioja@yahoo.com" class="btn">Get in Touch</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    Jake Allen<br>
+                    <a href="mailto:studioja@yahoo.com" style="color: #2a2a2a; text-decoration: none;">studioja@yahoo.com</a>
+                </p>
                 <div class="social-links">
                     <a href="#" aria-label="Instagram">Instagram</a>
                     <a href="#" aria-label="Twitter">Twitter</a>
@@ -102,7 +62,32 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Artwork by JA. All rights reserved.</p>
+        <p>&copy; 2026 Jake Allen. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Load artwork data and populate gallery
+        fetch('artwork.json')
+            .then(response => response.json())
+            .then(data => {
+                // Populate artist bio
+                document.getElementById('artistBio').textContent = data.artist.bio;
+
+                // Populate gallery
+                const galleryGrid = document.getElementById('galleryGrid');
+                galleryGrid.innerHTML = data.gallery
+                    .map(piece => `
+                        <div class="artwork">
+                            <img src="images/${piece.image}" alt="${piece.title}">
+                            <div class="artwork-info">
+                                <h3>${piece.title}</h3>
+                                <p>${piece.medium}</p>
+                            </div>
+                        </div>
+                    `)
+                    .join('');
+            })
+            .catch(error => console.error('Error loading gallery:', error));
+    </script>
 </body>
 </html>
