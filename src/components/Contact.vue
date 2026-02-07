@@ -4,13 +4,16 @@
     <div class="contact-content">
       <p>Interested in purchasing a piece or commissioning work?</p>
       <a href="mailto:studioja@yahoo.com" class="btn">Get in Touch</a>
-      <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-        Jake Allen<br>
-        <a href="mailto:studioja@yahoo.com" style="color: #2a2a2a; text-decoration: none;">studioja@yahoo.com</a>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #666">
+        Jake Allen<br />
+        <a
+          href="mailto:studioja@yahoo.com"
+          style="color: #2a2a2a; text-decoration: none"
+          >studioja@yahoo.com</a
+        >
       </p>
       <div class="social-links">
         <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="Twitter">Twitter</a>
       </div>
     </div>
   </section>
@@ -18,8 +21,8 @@
 
 <script>
 export default {
-  name: 'Contact'
-}
+  name: "Contact",
+};
 </script>
 
 <style scoped>
@@ -35,7 +38,7 @@ section {
   border-radius: 8px;
   margin: 4rem auto;
   padding: 4rem 2rem;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 #contact h2 {
