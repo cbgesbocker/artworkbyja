@@ -29,14 +29,16 @@ That's it. No HTML editing needed.
 ## Local Development
 
 ```bash
-# Python
-python -m http.server 8000
+# Install dependencies
+npm install
 
-# Node
-npx serve
+# Start dev server
+npm run dev
 ```
 
-Then visit http://localhost:8000
+Then visit http://localhost:5173
+
+The dev server includes hot module reloading, so your changes appear instantly.
 
 ## File Structure
 
