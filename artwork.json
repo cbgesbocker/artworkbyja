@@ -8,23 +8,44 @@
   "gallery": [
     {
       "id": 1,
-      "title": "Piece Title",
+      "title": "BTC Slots",
       "medium": "Medium, Year",
-      "image": "placeholder-1.jpg",
-      "description": "Optional description"
+      "image": "1.jpg",
+      "description": "Bitcoin slots"
     },
     {
       "id": 2,
-      "title": "Piece Title",
-      "medium": "Medium, Year",
-      "image": "placeholder-2.jpg",
+      "title": "Megatron",
+      "medium": "",
+      "image": "2.jpg",
       "description": "Optional description"
     },
     {
       "id": 3,
-      "title": "Piece Title",
+      "title": "",
       "medium": "Medium, Year",
-      "image": "placeholder-3.jpg",
+      "image": "3.jpg",
+      "description": "Optional description"
+    },
+    {
+      "id": 4,
+      "title": "BTC Slots",
+      "medium": "Medium, Year",
+      "image": "4.jpg",
+      "description": "Bitcoin slots"
+    },
+    {
+      "id": 5,
+      "title": "Megatron",
+      "medium": "",
+      "image": "5.jpeg",
+      "description": "Optional description"
+    },
+    {
+      "id": 6,
+      "title": "",
+      "medium": "Medium, Year",
+      "image": "6.png",
       "description": "Optional description"
     }
   ]
