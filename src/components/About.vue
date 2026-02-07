@@ -7,7 +7,7 @@
         :src="`/images/${artistPhoto}`"
         alt="Jake Allen"
         class="artist-photo"
-      >
+      />
       <div class="about-text">
         <p v-if="artistBio">{{ artistBio }}</p>
         <p v-else>Loading artist info...</p>
@@ -18,27 +18,27 @@
 
 <script>
 export default {
-  name: 'About',
+  name: "About",
   data() {
     return {
-      artistBio: '',
-      artistPhoto: 'artist.jpg'
-    }
+      artistBio: "",
+      artistPhoto: "artist.JPG",
+    };
   },
   mounted() {
-    this.loadArtistInfo()
+    this.loadArtistInfo();
   },
   methods: {
     loadArtistInfo() {
-      fetch('/artwork.json')
-        .then(response => response.json())
-        .then(data => {
-          this.artistBio = data.artist.bio
+      fetch("/artwork.json")
+        .then((response) => response.json())
+        .then((data) => {
+          this.artistBio = data.artist.bio;
         })
-        .catch(error => console.error('Error loading artist info:', error))
-    }
-  }
-}
+        .catch((error) => console.error("Error loading artist info:", error));
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -80,7 +80,7 @@ section {
 }
 
 .about-text {
-  max-width: 500px;
+  max-width: 900px;
 }
 
 .about-text p {
