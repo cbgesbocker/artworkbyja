@@ -7,3 +7,15 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+
+# Development
+.env.local
+.env.*.local
+
