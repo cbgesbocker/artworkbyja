@@ -2,9 +2,10 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <div
+      <router-link
         v-for="piece in gallery"
         :key="piece.id"
+        :to="`/artwork/${piece.id}`"
         class="artwork"
       >
         <img
@@ -15,7 +16,7 @@
           <h3>{{ piece.title }}</h3>
           <p>{{ piece.medium }}</p>
         </div>
-      </div>
+      </router-link>
     </div>
   </section>
 </template>
@@ -74,6 +75,10 @@ section {
   border-radius: 4px;
   box-shadow: 0 2px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 .artwork:hover {
