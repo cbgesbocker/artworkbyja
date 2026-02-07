@@ -13,8 +13,48 @@
 
     <main>
       <section id="hero">
-        <h1>Jake Allen</h1>
-        <p>Original artwork & illustrations</p>
+        <!-- Abstract background art -->
+        <svg class="hero-background" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+          <!-- Geometric shapes and lines -->
+          <defs>
+            <linearGradient id="gradientLine1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#8b7355;stop-opacity:0.15" />
+              <stop offset="100%" style="stop-color:#d4a574;stop-opacity:0.05" />
+            </linearGradient>
+            <linearGradient id="gradientLine2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#c9a961;stop-opacity:0.1" />
+              <stop offset="100%" style="stop-color:#8b7355;stop-opacity:0.08" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Large flowing lines -->
+          <path d="M 0 200 Q 250 100, 500 250 T 1000 400" stroke="url(#gradientLine1)" stroke-width="3" fill="none" />
+          <path d="M 1000 150 Q 750 300, 500 200 T 0 500" stroke="url(#gradientLine2)" stroke-width="2.5" fill="none" />
+          <path d="M 0 600 L 1000 400" stroke="url(#gradientLine1)" stroke-width="2" fill="none" opacity="0.6" />
+          
+          <!-- Geometric shapes -->
+          <circle cx="150" cy="200" r="80" fill="none" stroke="#a8956f" stroke-width="1.5" opacity="0.2" />
+          <circle cx="850" cy="700" r="120" fill="none" stroke="#c9a961" stroke-width="1" opacity="0.15" />
+          <rect x="700" y="100" width="200" height="200" fill="none" stroke="#8b7355" stroke-width="1.5" opacity="0.2" transform="rotate(25 800 200)" />
+          <polygon points="200,800 300,700 350,850 280,900" fill="none" stroke="#a8956f" stroke-width="1" opacity="0.2" />
+          
+          <!-- Scattered abstract lines -->
+          <line x1="0" y1="800" x2="300" y2="750" stroke="#c9a961" stroke-width="1" opacity="0.15" />
+          <line x1="700" y1="950" x2="1000" y2="850" stroke="#8b7355" stroke-width="1.5" opacity="0.2" />
+          <line x1="400" y1="0" x2="350" y2="400" stroke="#a8956f" stroke-width="1" opacity="0.1" />
+          <line x1="600" y1="0" x2="700" y2="500" stroke="#c9a961" stroke-width="1" opacity="0.12" />
+          
+          <!-- Subtle dots -->
+          <circle cx="100" cy="500" r="3" fill="#8b7355" opacity="0.2" />
+          <circle cx="450" cy="150" r="2.5" fill="#a8956f" opacity="0.15" />
+          <circle cx="900" cy="300" r="3" fill="#c9a961" opacity="0.18" />
+          <circle cx="250" cy="900" r="2" fill="#8b7355" opacity="0.12" />
+        </svg>
+        
+        <div class="hero-content">
+          <h1>Jake Allen</h1>
+          <p>Original artwork & illustrations</p>
+        </div>
       </section>
 
       <Gallery></Gallery>
@@ -98,6 +138,7 @@ main {
 
 /* Hero */
 #hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -108,6 +149,22 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 6rem;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 #hero h1 {
