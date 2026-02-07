@@ -23,7 +23,11 @@ const router = createRouter({
       return savedPosition
     }
     if (to.hash) {
-      return { el: to.hash, behavior: 'smooth' }
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ el: to.hash, behavior: 'smooth' })
+        }, 300)
+      })
     }
     return { top: 0 }
   }
