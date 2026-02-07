@@ -28,27 +28,27 @@
           </defs>
           
           <!-- Large flowing lines -->
-          <path d="M 0 200 Q 250 100, 500 250 T 1000 400" stroke="url(#gradientLine1)" stroke-width="5" fill="none" />
-          <path d="M 1000 150 Q 750 300, 500 200 T 0 500" stroke="url(#gradientLine2)" stroke-width="4" fill="none" />
-          <path d="M 0 600 L 1000 400" stroke="url(#gradientLine1)" stroke-width="3.5" fill="none" opacity="0.8" />
+          <path d="M 0 200 Q 250 100, 500 250 T 1000 400" stroke="url(#gradientLine1)" stroke-width="3.5" fill="none" />
+          <path d="M 1000 150 Q 750 300, 500 200 T 0 500" stroke="url(#gradientLine2)" stroke-width="3" fill="none" />
+          <path d="M 0 600 L 1000 400" stroke="url(#gradientLine1)" stroke-width="2.5" fill="none" opacity="0.7" />
           
           <!-- Geometric shapes -->
-          <circle cx="150" cy="200" r="80" fill="none" stroke="#a8956f" stroke-width="2.5" opacity="0.4" />
-          <circle cx="850" cy="700" r="120" fill="none" stroke="#c9a961" stroke-width="2" opacity="0.35" />
-          <rect x="700" y="100" width="200" height="200" fill="none" stroke="#8b7355" stroke-width="2.5" opacity="0.4" transform="rotate(25 800 200)" />
-          <polygon points="200,800 300,700 350,850 280,900" fill="none" stroke="#a8956f" stroke-width="2" opacity="0.4" />
+          <circle cx="150" cy="200" r="80" fill="none" stroke="#a8956f" stroke-width="1.8" opacity="0.3" />
+          <circle cx="850" cy="700" r="120" fill="none" stroke="#c9a961" stroke-width="1.5" opacity="0.25" />
+          <rect x="700" y="100" width="200" height="200" fill="none" stroke="#8b7355" stroke-width="1.8" opacity="0.3" transform="rotate(25 800 200)" />
+          <polygon points="200,800 300,700 350,850 280,900" fill="none" stroke="#a8956f" stroke-width="1.5" opacity="0.3" />
           
           <!-- Scattered abstract lines -->
-          <line x1="0" y1="800" x2="300" y2="750" stroke="#c9a961" stroke-width="2" opacity="0.35" />
-          <line x1="700" y1="950" x2="1000" y2="850" stroke="#8b7355" stroke-width="2.5" opacity="0.4" />
-          <line x1="400" y1="0" x2="350" y2="400" stroke="#a8956f" stroke-width="2" opacity="0.3" />
-          <line x1="600" y1="0" x2="700" y2="500" stroke="#c9a961" stroke-width="2" opacity="0.35" />
+          <line x1="0" y1="800" x2="300" y2="750" stroke="#c9a961" stroke-width="1.5" opacity="0.25" />
+          <line x1="700" y1="950" x2="1000" y2="850" stroke="#8b7355" stroke-width="1.8" opacity="0.3" />
+          <line x1="400" y1="0" x2="350" y2="400" stroke="#a8956f" stroke-width="1.5" opacity="0.2" />
+          <line x1="600" y1="0" x2="700" y2="500" stroke="#c9a961" stroke-width="1.5" opacity="0.25" />
           
           <!-- Subtle dots -->
-          <circle cx="100" cy="500" r="4" fill="#8b7355" opacity="0.4" />
-          <circle cx="450" cy="150" r="3.5" fill="#a8956f" opacity="0.35" />
-          <circle cx="900" cy="300" r="4" fill="#c9a961" opacity="0.4" />
-          <circle cx="250" cy="900" r="3" fill="#8b7355" opacity="0.3" />
+          <circle cx="100" cy="500" r="3" fill="#8b7355" opacity="0.3" />
+          <circle cx="450" cy="150" r="2.5" fill="#a8956f" opacity="0.25" />
+          <circle cx="900" cy="300" r="3" fill="#c9a961" opacity="0.3" />
+          <circle cx="250" cy="900" r="2" fill="#8b7355" opacity="0.2" />
         </svg>
         
         <div class="hero-content">
@@ -159,7 +159,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.75;
+  opacity: 0.55;
 }
 
 .hero-content {
