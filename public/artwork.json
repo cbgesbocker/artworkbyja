@@ -2,29 +2,50 @@
   "artist": {
     "name": "Jake Allen",
     "email": "studioja@yahoo.com",
-    "bio": "Jake Allen is an artist exploring [themes]. With a passion for [medium/style], their work captures [unique perspective].",
+    "bio": "Jake Allen is an artist out of Wyoming. With a passion for multi-medium artwork, their work captures unique intersection of modern and contemporary.",
     "location": "[Your Location]"
   },
   "gallery": [
     {
       "id": 1,
-      "title": "Piece Title",
+      "title": "BTC Slots",
       "medium": "Medium, Year",
-      "image": "placeholder-1.jpg",
-      "description": "Optional description"
+      "image": "1.JPG",
+      "description": "Bitcoin slots"
     },
     {
       "id": 2,
-      "title": "Piece Title",
-      "medium": "Medium, Year",
-      "image": "placeholder-2.jpg",
+      "title": "Megatron",
+      "medium": "",
+      "image": "2.JPG",
       "description": "Optional description"
     },
     {
       "id": 3,
-      "title": "Piece Title",
+      "title": "",
       "medium": "Medium, Year",
-      "image": "placeholder-3.jpg",
+      "image": "3.JPG",
+      "description": "Optional description"
+    },
+    {
+      "id": 4,
+      "title": "BTC Slots",
+      "medium": "Medium, Year",
+      "image": "4.JPG",
+      "description": "Bitcoin slots"
+    },
+    {
+      "id": 5,
+      "title": "Megatron",
+      "medium": "",
+      "image": "5.JPEG",
+      "description": "Optional description"
+    },
+    {
+      "id": 6,
+      "title": "",
+      "medium": "Medium, Year",
+      "image": "6.PNG",
       "description": "Optional description"
     }
   ]
