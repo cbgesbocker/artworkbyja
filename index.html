@@ -4,90 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artwork by Jake Allen</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo">JA</a>
-            <ul>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <h1>Jake Allen</h1>
-            <p>Original artwork & illustrations</p>
-        </section>
-
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Populated by JavaScript -->
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>About the Artist</h2>
-            <div class="about-content">
-                <img src="images/artist.jpg" alt="Jake Allen" class="artist-photo">
-                <div class="about-text">
-                    <p id="artistBio">Loading artist info...</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-content">
-                <p>Interested in purchasing a piece or commissioning work?</p>
-                <a href="mailto:studioja@yahoo.com" class="btn">Get in Touch</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    Jake Allen<br>
-                    <a href="mailto:studioja@yahoo.com" style="color: #2a2a2a; text-decoration: none;">studioja@yahoo.com</a>
-                </p>
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram">Instagram</a>
-                    <a href="#" aria-label="Twitter">Twitter</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Jake Allen. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Load artwork data and populate gallery
-        fetch('artwork.json')
-            .then(response => response.json())
-            .then(data => {
-                // Populate artist bio
-                document.getElementById('artistBio').textContent = data.artist.bio;
-
-                // Populate gallery
-                const galleryGrid = document.getElementById('galleryGrid');
-                galleryGrid.innerHTML = data.gallery
-                    .map(piece => `
-                        <div class="artwork">
-                            <img src="images/${piece.image}" alt="${piece.title}">
-                            <div class="artwork-info">
-                                <h3>${piece.title}</h3>
-                                <p>${piece.medium}</p>
-                            </div>
-                        </div>
-                    `)
-                    .join('');
-            })
-            .catch(error => console.error('Error loading gallery:', error));
-    </script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
