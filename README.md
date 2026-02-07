@@ -81,6 +81,7 @@ artworkbyja/
 ## Customizing Content
 
 ### Gallery
+<<<<<<< HEAD
 - Add/remove pieces in `public/artwork.json` under the `"gallery"` array
 - Images should be placed in `public/images/`
 
@@ -131,6 +132,37 @@ npm run preview
 ## DNS Setup
 
 Custom domain `artworkbyja.com` is configured with:
+=======
+- Add/remove pieces in `artwork.json` under `"gallery"`
+
+### Artist Bio
+- Edit `artwork.json` → `"artist"` → `"bio"`
+
+### Contact Info
+- Email is already set to `studioja@yahoo.com` (update in `artwork.json` if needed)
+
+### Colors & Styling
+- Edit `css/style.css` (CSS variables in `:root` section)
+
+### Fonts
+- Edit the Google Fonts link in `index.html`
+
+## Deployment
+
+Hosted on GitHub Pages. Just push to `main` branch:
+
+```bash
+git add .
+git commit -m "Updated gallery"
+git push origin main
+```
+
+Changes appear live in ~30 seconds.
+
+## DNS Setup
+
+Custom domain `artworkbyja.com` configured with:
+>>>>>>> origin/master
 
 ```
 A Records:
@@ -144,6 +176,7 @@ CNAME Record:
   Value: <username>.github.io
 ```
 
+<<<<<<< HEAD
 ## Technology Stack
 
 - **Vue.js 3** - Progressive JavaScript framework
@@ -195,3 +228,8 @@ CNAME Record:
 ---
 
 Questions? Edit `public/artwork.json`, commit, and push. The site handles the rest! 🎨
+=======
+---
+
+Questions? Just edit `artwork.json` and push. The site will handle the rest.
+>>>>>>> origin/master
