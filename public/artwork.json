@@ -17,36 +17,6 @@
       "image": "1.JPG"
     },
     {
-      "id": 2,
-      "title": "Satoshoid",
-      "year": 2024,
-      "dimensions": "30x40\"",
-      "material": "Acrylic on Canvas",
-      "featuredAt": null,
-      "availability": "Sold",
-      "image": "2.JPG"
-    },
-    {
-      "id": 3,
-      "title": "Dollars Down",
-      "year": 2024,
-      "dimensions": "18x24\"",
-      "material": "Acrylic on Canvas",
-      "featuredAt": "Bitcoin Magazine May 2025 - Freedom Issue",
-      "availability": "Sold",
-      "image": "3.JPG"
-    },
-    {
-      "id": 4,
-      "title": "Spacescape",
-      "year": 2023,
-      "dimensions": "30x40\"",
-      "material": "Acrylic on Canvas",
-      "featuredAt": null,
-      "availability": "Sold",
-      "image": "4.JPG"
-    },
-    {
       "id": 5,
       "title": "Mt. Fuji Bull Run",
       "year": 2025,
@@ -57,14 +27,14 @@
       "image": "5.JPEG"
     },
     {
-      "id": 6,
-      "title": "Christopher Hitchens",
-      "year": 2017,
-      "dimensions": "36x36\"",
+      "id": 2,
+      "title": "Satoshoid",
+      "year": 2024,
+      "dimensions": "30x40\"",
       "material": "Acrylic on Canvas",
       "featuredAt": null,
       "availability": "Sold",
-      "image": "6.PNG"
+      "image": "2.JPG"
     },
     {
       "id": 7,
@@ -78,6 +48,16 @@
       "altImages": ["9.jpg"]
     },
     {
+      "id": 3,
+      "title": "Dollars Down",
+      "year": 2024,
+      "dimensions": "18x24\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": "Bitcoin Magazine May 2025 - Freedom Issue",
+      "availability": "Sold",
+      "image": "3.JPG"
+    },
+    {
       "id": 8,
       "title": "Federal Ender",
       "year": 2026,
@@ -88,6 +68,26 @@
       "availability": "For Sale",
       "image": "11.jpg",
       "altImages": ["13.jpg", "14.jpg", "15.jpg", "16.jpg", "19.png"]
+    },
+    {
+      "id": 4,
+      "title": "Spacescape",
+      "year": 2023,
+      "dimensions": "30x40\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "4.JPG"
+    },
+    {
+      "id": 6,
+      "title": "Christopher Hitchens",
+      "year": 2017,
+      "dimensions": "36x36\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "6.PNG"
     }
   ]
 }
