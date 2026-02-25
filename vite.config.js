@@ -1,23 +1,23 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [vue()],
   server: {
     port: 5173,
-    open: true
+    open: true,
   },
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     rollupOptions: {
       output: {
         manualChunks: {
-          'vue': ['vue', 'vue-router']
-        }
-      }
-    }
+          vue: ["vue", "vue-router"],
+        },
+      },
+    },
   },
   optimizeDeps: {
-    include: ['vue', 'vue-router']
-  }
-})
+    include: ["vue", "vue-router"],
+  },
+});
