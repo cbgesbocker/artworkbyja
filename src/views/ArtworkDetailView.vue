@@ -6,25 +6,38 @@
 
     <div class="detail-content">
       <div class="detail-image-wrapper">
+        <!-- Image display with navigation -->
+        <div class="image-container" v-if="allImages.length > 1">
+          <button class="nav-btn prev-btn" @click="previousImage" title="Previous image (←)">
+            <span>‹</span>
+          </button>
+          <img
+            :src="`/images/${activeImage}`"
+            :alt="piece.title"
+            class="detail-image"
+          >
+          <button class="nav-btn next-btn" @click="nextImage" title="Next image (→)">
+            <span>›</span>
+          </button>
+          <div class="image-counter">{{ currentImageIndex + 1 }} / {{ allImages.length }}</div>
+        </div>
         <img
+          v-else
           :src="`/images/${activeImage}`"
           :alt="piece.title"
           class="detail-image"
         >
-        <div class="alt-images" v-if="piece.altImages && piece.altImages.length">
+
+        <!-- Thumbnail strip -->
+        <div class="alt-images" v-if="allImages.length > 1">
           <button
-            :class="['thumb-btn', activeImage === piece.image ? 'active' : '']"
-            @click="activeImage = piece.image"
+            v-for="(img, idx) in allImages"
+            :key="img"
+            :class="['thumb-btn', activeImage === img ? 'active' : '']"
+            @click="selectImage(idx)"
+            :title="`View ${idx + 1} of ${allImages.length}`"
           >
-            <img :src="`/images/${piece.image}`" :alt="piece.title">
-          </button>
-          <button
-            v-for="alt in piece.altImages"
-            :key="alt"
-            :class="['thumb-btn', activeImage === alt ? 'active' : '']"
-            @click="activeImage = alt"
-          >
-            <img :src="`/images/${alt}`" :alt="piece.title + ' alternate view'">
+            <img :src="`/images/${img}`" :alt="piece.title">
           </button>
         </div>
       </div>
@@ -37,6 +50,14 @@
             <div class="meta-row" v-if="piece.year">
               <dt>Year</dt>
               <dd>{{ piece.year }}</dd>
+            </div>
+            <div class="meta-row" v-if="piece.collaboration">
+              <dt>Collaboration</dt>
+              <dd>{{ piece.collaboration }}</dd>
+            </div>
+            <div class="meta-row" v-if="piece.artists && piece.artists.length">
+              <dt>Artists</dt>
+              <dd>{{ piece.artists.join(', ') }}</dd>
             </div>
             <div class="meta-row" v-if="piece.dimensions">
               <dt>Dimensions</dt>
@@ -82,8 +103,21 @@ export default {
       activeImage: null
     }
   },
+  computed: {
+    allImages() {
+      if (!this.piece) return []
+      return [this.piece.image, ...(this.piece.altImages || [])]
+    },
+    currentImageIndex() {
+      return this.allImages.indexOf(this.activeImage)
+    }
+  },
   mounted() {
     this.loadArtwork()
+    window.addEventListener('keydown', this.handleKeyboard)
+  },
+  beforeUnmount() {
+    window.removeEventListener('keydown', this.handleKeyboard)
   },
   watch: {
     '$route.params.id'() {
@@ -104,6 +138,28 @@ export default {
           console.error('Error loading artwork:', error)
           this.loaded = true
         })
+    },
+    previousImage() {
+      const idx = this.currentImageIndex
+      if (idx > 0) {
+        this.activeImage = this.allImages[idx - 1]
+      }
+    },
+    nextImage() {
+      const idx = this.currentImageIndex
+      if (idx < this.allImages.length - 1) {
+        this.activeImage = this.allImages[idx + 1]
+      }
+    },
+    selectImage(index) {
+      this.activeImage = this.allImages[index]
+    },
+    handleKeyboard(e) {
+      if (e.key === 'ArrowLeft') {
+        this.previousImage()
+      } else if (e.key === 'ArrowRight') {
+        this.nextImage()
+      }
     }
   }
 }
@@ -146,12 +202,58 @@ export default {
   top: 100px;
 }
 
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .detail-image {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 4px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.image-container .detail-image {
+  flex: 1;
+}
+
+.nav-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  background: rgba(250, 250, 250, 0.95);
+  border-color: var(--color-text);
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 0.78rem;
+  background: rgba(26, 26, 26, 0.7);
+  color: rgba(250, 250, 250, 0.9);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
 /* Alternate image thumbnails */

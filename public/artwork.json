@@ -76,6 +76,18 @@
       "availability": "For Sale",
       "image": "10.jpg",
       "altImages": ["9.jpg"]
+    },
+    {
+      "id": 8,
+      "title": "Federal Ender",
+      "year": 2026,
+      "material": "African Mahogany Wood with Graphic Pen Illustration",
+      "collaboration": "ArtworkbyJA x J.L.H Guitars",
+      "artists": ["Jake Allen", "Joe Hoffman"],
+      "featuredAt": "2026 Bitcoin Conference",
+      "availability": "For Sale",
+      "image": "11.jpg",
+      "altImages": ["12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.png", "18.png", "19.png"]
     }
   ]
 }
