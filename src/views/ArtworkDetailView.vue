@@ -1,32 +1,44 @@
 <template>
   <div class="artwork-detail" v-if="piece">
     <div class="detail-header">
-      <router-link :to="{ path: '/', hash: '#gallery' }" class="back-link">&larr; Back to Gallery</router-link>
+      <router-link :to="{ path: '/', hash: '#gallery' }" class="back-link"
+        >&larr; Back to Gallery</router-link
+      >
     </div>
 
     <div class="detail-content">
       <div class="detail-image-wrapper">
         <!-- Image display with navigation -->
         <div class="image-container" v-if="allImages.length > 1">
-          <button class="nav-btn prev-btn" @click="previousImage" title="Previous image (←)">
+          <button
+            class="nav-btn prev-btn"
+            @click="previousImage"
+            title="Previous image (←)"
+          >
             <span>‹</span>
           </button>
           <img
             :src="`/images/${activeImage}`"
             :alt="piece.title"
             class="detail-image"
+          />
+          <button
+            class="nav-btn next-btn"
+            @click="nextImage"
+            title="Next image (→)"
           >
-          <button class="nav-btn next-btn" @click="nextImage" title="Next image (→)">
             <span>›</span>
           </button>
-          <div class="image-counter">{{ currentImageIndex + 1 }} / {{ allImages.length }}</div>
+          <div class="image-counter">
+            {{ currentImageIndex + 1 }} / {{ allImages.length }}
+          </div>
         </div>
         <img
           v-else
           :src="`/images/${activeImage}`"
           :alt="piece.title"
           class="detail-image"
-        >
+        />
 
         <!-- Thumbnail strip -->
         <div class="alt-images" v-if="allImages.length > 1">
@@ -37,7 +49,7 @@
             @click="selectImage(idx)"
             :title="`View ${idx + 1} of ${allImages.length}`"
           >
-            <img :src="`/images/${img}`" :alt="piece.title">
+            <img :src="`/images/${img}`" :alt="piece.title" />
           </button>
         </div>
       </div>
@@ -57,7 +69,7 @@
             </div>
             <div class="meta-row" v-if="piece.artists && piece.artists.length">
               <dt>Artists</dt>
-              <dd>{{ piece.artists.join(', ') }}</dd>
+              <dd>{{ piece.artists.join(", ") }}</dd>
             </div>
             <div class="meta-row" v-if="piece.dimensions">
               <dt>Dimensions</dt>
@@ -73,21 +85,30 @@
             </div>
             <div class="meta-row" v-if="piece.availability">
               <dt>Availability</dt>
-              <dd :class="['availability', piece.availability === 'For Sale' ? 'for-sale' : 'sold']">
+              <dd
+                :class="[
+                  'availability',
+                  piece.availability === 'For Sale' ? 'for-sale' : 'sold',
+                ]"
+              >
                 {{ piece.availability }}
               </dd>
             </div>
           </dl>
         </div>
 
-        <router-link :to="{ path: '/', hash: '#gallery' }" class="back-button">&larr; Back to Gallery</router-link>
+        <router-link :to="{ path: '/', hash: '#gallery' }" class="back-button"
+          >&larr; Back to Gallery</router-link
+        >
       </div>
     </div>
   </div>
 
   <div class="artwork-detail artwork-not-found" v-else-if="loaded">
     <div class="detail-header">
-      <router-link :to="{ path: '/', hash: '#gallery' }" class="back-link">&larr; Back to Gallery</router-link>
+      <router-link :to="{ path: '/', hash: '#gallery' }" class="back-link"
+        >&larr; Back to Gallery</router-link
+      >
     </div>
     <p>Artwork not found.</p>
   </div>
@@ -95,79 +116,79 @@
 
 <script>
 export default {
-  name: 'ArtworkDetailView',
+  name: "ArtworkDetailView",
   data() {
     return {
       piece: null,
       loaded: false,
-      activeImage: null
-    }
+      activeImage: null,
+    };
   },
   computed: {
     allImages() {
-      if (!this.piece) return []
-      return [this.piece.image, ...(this.piece.altImages || [])]
+      if (!this.piece) return [];
+      return [this.piece.image, ...(this.piece.altImages || [])];
     },
     currentImageIndex() {
-      return this.allImages.indexOf(this.activeImage)
-    }
+      return this.allImages.indexOf(this.activeImage);
+    },
   },
   mounted() {
-    this.loadArtwork()
-    window.addEventListener('keydown', this.handleKeyboard)
+    this.loadArtwork();
+    window.addEventListener("keydown", this.handleKeyboard);
   },
   beforeUnmount() {
-    window.removeEventListener('keydown', this.handleKeyboard)
+    window.removeEventListener("keydown", this.handleKeyboard);
   },
   watch: {
-    '$route.params.id'() {
-      this.loadArtwork()
-    }
+    "$route.params.id"() {
+      this.loadArtwork();
+    },
   },
   methods: {
     loadArtwork() {
-      const id = parseInt(this.$route.params.id)
-      fetch('/artwork.json')
-        .then(response => response.json())
-        .then(data => {
-          this.piece = data.gallery.find(p => p.id === id) || null
-          this.activeImage = this.piece ? this.piece.image : null
-          this.loaded = true
+      const id = parseInt(this.$route.params.id);
+      fetch("/artwork.json")
+        .then((response) => response.json())
+        .then((data) => {
+          this.piece = data.gallery.find((p) => p.id === id) || null;
+          this.activeImage = this.piece ? this.piece.image : null;
+          this.loaded = true;
         })
-        .catch(error => {
-          console.error('Error loading artwork:', error)
-          this.loaded = true
-        })
+        .catch((error) => {
+          console.error("Error loading artwork:", error);
+          this.loaded = true;
+        });
     },
     previousImage() {
-      const idx = this.currentImageIndex
+      const idx = this.currentImageIndex;
       if (idx > 0) {
-        this.activeImage = this.allImages[idx - 1]
+        this.activeImage = this.allImages[idx - 1];
       }
     },
     nextImage() {
-      const idx = this.currentImageIndex
+      const idx = this.currentImageIndex;
       if (idx < this.allImages.length - 1) {
-        this.activeImage = this.allImages[idx + 1]
+        this.activeImage = this.allImages[idx + 1];
       }
     },
     selectImage(index) {
-      this.activeImage = this.allImages[index]
+      this.activeImage = this.allImages[index];
     },
     handleKeyboard(e) {
-      if (e.key === 'ArrowLeft') {
-        this.previousImage()
-      } else if (e.key === 'ArrowRight') {
-        this.nextImage()
+      if (e.key === "ArrowLeft") {
+        this.previousImage();
+      } else if (e.key === "ArrowRight") {
+        this.nextImage();
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
 .artwork-detail {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 120px 2rem 4rem;
   min-height: 100vh;
@@ -192,7 +213,7 @@ export default {
 
 .detail-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 4rem;
   align-items: start;
 }
@@ -200,6 +221,22 @@ export default {
 .detail-image-wrapper {
   position: sticky;
   top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-image-wrapper > .detail-image {
+  max-height: 75vh;
+  object-fit: contain;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-height: 75vh;
 }
 
 .image-container {
@@ -219,6 +256,8 @@ export default {
 
 .image-container .detail-image {
   flex: 1;
+  max-height: 75vh;
+  object-fit: contain;
 }
 
 .nav-btn {
