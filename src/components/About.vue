@@ -77,6 +77,8 @@ section {
   height: 300px;
   object-fit: cover;
   border-radius: 50%;
+  border: 3px solid var(--color-light-blue);
+  box-shadow: 0 4px 20px rgba(15, 95, 125, 0.12);
 }
 
 .about-text {
@@ -89,6 +91,6 @@ section {
 }
 
 .artist-photo[src*="artist"] {
-  background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+  background: linear-gradient(135deg, var(--color-light-blue) 0%, #f5f5f5 100%);
 }
 </style>

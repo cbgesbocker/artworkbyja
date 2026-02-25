@@ -108,7 +108,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--color-text);
+  color: var(--color-primary-blue);
 }
 
 /* Main content */
@@ -122,6 +122,7 @@ footer {
   padding: 2rem;
   color: var(--color-text-light);
   font-size: 0.85rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-primary-blue);
+  background: linear-gradient(180deg, var(--color-bg) 0%, #f0f7f9 100%);
 }
 </style>
