@@ -7,10 +7,26 @@
     <div class="detail-content">
       <div class="detail-image-wrapper">
         <img
-          :src="`/images/${piece.image}`"
+          :src="`/images/${activeImage}`"
           :alt="piece.title"
           class="detail-image"
         >
+        <div class="alt-images" v-if="piece.altImages && piece.altImages.length">
+          <button
+            :class="['thumb-btn', activeImage === piece.image ? 'active' : '']"
+            @click="activeImage = piece.image"
+          >
+            <img :src="`/images/${piece.image}`" :alt="piece.title">
+          </button>
+          <button
+            v-for="alt in piece.altImages"
+            :key="alt"
+            :class="['thumb-btn', activeImage === alt ? 'active' : '']"
+            @click="activeImage = alt"
+          >
+            <img :src="`/images/${alt}`" :alt="piece.title + ' alternate view'">
+          </button>
+        </div>
       </div>
 
       <div class="detail-info">
@@ -62,7 +78,8 @@ export default {
   data() {
     return {
       piece: null,
-      loaded: false
+      loaded: false,
+      activeImage: null
     }
   },
   mounted() {
@@ -80,6 +97,7 @@ export default {
         .then(response => response.json())
         .then(data => {
           this.piece = data.gallery.find(p => p.id === id) || null
+          this.activeImage = this.piece ? this.piece.image : null
           this.loaded = true
         })
         .catch(error => {
@@ -134,6 +152,41 @@ export default {
   display: block;
   border-radius: 4px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Alternate image thumbnails */
+.alt-images {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.thumb-btn {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-btn.active {
+  border-color: var(--color-text);
+}
+
+.thumb-btn:hover:not(.active) {
+  border-color: var(--color-text-light);
 }
 
 .detail-info {
