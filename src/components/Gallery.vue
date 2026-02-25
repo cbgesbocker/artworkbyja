@@ -88,7 +88,7 @@ section {
 
 .artwork:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 40px rgba(15, 95, 125, 0.15);
 }
 
 .artwork-image-container {
@@ -117,7 +117,7 @@ section {
 }
 
 .availability-badge.for-sale {
-  background: rgba(45, 106, 79, 0.85);
+  background: rgba(15, 95, 125, 0.9);
   color: rgba(250, 250, 250, 0.95);
 }
 
@@ -135,6 +135,11 @@ section {
 .artwork-info h3 {
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
+  transition: color 0.2s;
+}
+
+.artwork:hover .artwork-info h3 {
+  color: var(--color-dark-blue);
 }
 
 .artwork-info p {

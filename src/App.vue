@@ -2,7 +2,9 @@
   <div id="app">
     <header>
       <nav>
-        <router-link to="/" class="logo">JA</router-link>
+        <router-link to="/" class="logo">
+          <img src="/images/ja.png" alt="JA Logo" class="logo-image" />
+        </router-link>
         <ul>
           <li><a href="#" @click.prevent="scrollTo('gallery')">Gallery</a></li>
           <li><a href="#" @click.prevent="scrollTo('about')">About</a></li>
@@ -72,10 +74,22 @@ nav {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: var(--color-text);
+  height: 40px;
+}
+
+.logo-image {
+  height: 100%;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.logo:hover .logo-image {
+  opacity: 0.8;
 }
 
 nav ul {
@@ -94,7 +108,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--color-text);
+  color: var(--color-primary-blue);
 }
 
 /* Main content */
@@ -108,6 +122,7 @@ footer {
   padding: 2rem;
   color: var(--color-text-light);
   font-size: 0.85rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-primary-blue);
+  background: linear-gradient(180deg, var(--color-bg) 0%, #f0f7f9 100%);
 }
 </style>

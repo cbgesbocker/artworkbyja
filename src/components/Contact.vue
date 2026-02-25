@@ -39,7 +39,8 @@ section {
   border-radius: 8px;
   margin: 4rem auto;
   padding: 4rem 2rem;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 20px rgba(15, 95, 125, 0.08);
+  border-top: 3px solid var(--color-primary-blue);
 }
 
 #contact h2 {
@@ -55,7 +56,7 @@ section {
 .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: var(--color-accent);
+  background: var(--color-dark-blue);
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
@@ -66,7 +67,7 @@ section {
 }
 
 .btn:hover {
-  background: #000;
+  background: var(--color-primary-blue);
 }
 
 .social-links {
@@ -84,6 +85,6 @@ section {
 }
 
 .social-links a:hover {
-  color: var(--color-text);
+  color: var(--color-primary-blue);
 }
 </style>
