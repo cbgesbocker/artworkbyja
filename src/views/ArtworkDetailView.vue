@@ -1,7 +1,7 @@
 <template>
   <div class="artwork-detail" v-if="piece">
     <div class="detail-header">
-      <router-link to="/" hash="#gallery" class="back-link">&larr; Back to Gallery</router-link>
+      <router-link :to="{ path: '/', hash: '#gallery' }" class="back-link">&larr; Back to Gallery</router-link>
     </div>
 
     <div class="detail-content">
@@ -22,14 +22,14 @@
           <p class="detail-artist">By Jake Allen</p>
         </div>
 
-        <router-link to="/" hash="#gallery" class="back-button">&larr; Back to Gallery</router-link>
+        <router-link :to="{ path: '/', hash: '#gallery' }" class="back-button">&larr; Back to Gallery</router-link>
       </div>
     </div>
   </div>
 
   <div class="artwork-detail artwork-not-found" v-else-if="loaded">
     <div class="detail-header">
-      <router-link to="/" hash="#gallery" class="back-link">&larr; Back to Gallery</router-link>
+      <router-link :to="{ path: '/', hash: '#gallery' }" class="back-link">&larr; Back to Gallery</router-link>
     </div>
     <p>Artwork not found.</p>
   </div>
