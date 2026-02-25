@@ -65,6 +65,17 @@
       "featuredAt": null,
       "availability": "Sold",
       "image": "6.PNG"
+    },
+    {
+      "id": 7,
+      "title": "Burden of Power",
+      "year": 2025,
+      "dimensions": "16.9x23.4\"",
+      "material": "Graphic Pen & Graphite on Bristol",
+      "featuredAt": "2025 Bitcoin Conference",
+      "availability": "For Sale",
+      "image": "10.jpg",
+      "altImages": ["9.jpg"]
     }
   ]
 }
