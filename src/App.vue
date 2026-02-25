@@ -9,8 +9,22 @@
           <li><a href="#" @click.prevent="scrollTo('gallery')">Gallery</a></li>
           <li><a href="#" @click.prevent="scrollTo('about')">About</a></li>
           <li><a href="#" @click.prevent="scrollTo('contact')">Contact</a></li>
-          <li><a href="https://www.instagram.com/jacoboiii/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="http://ArtworkbyJA.checkoutstores.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
+          <li class="md-and-up">
+            <a
+              href="https://www.instagram.com/jacoboiii/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+          </li>
+          <li class="md-and-up">
+            <a
+              href="http://ArtworkbyJA.checkoutstores.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Shop</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -31,27 +45,32 @@ export default {
   methods: {
     scrollTo(sectionId) {
       // If we're not on the home page, navigate there first
-      if (this.$route.path !== '/') {
-        this.$router.push('/').then(() => {
+      if (this.$route.path !== "/") {
+        this.$router.push("/").then(() => {
           this.$nextTick(() => {
-            const el = document.getElementById(sectionId)
+            const el = document.getElementById(sectionId);
             if (el) {
-              el.scrollIntoView({ behavior: 'smooth' })
+              el.scrollIntoView({ behavior: "smooth" });
             }
-          })
-        })
+          });
+        });
       } else {
-        const el = document.getElementById(sectionId)
+        const el = document.getElementById(sectionId);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth' })
+          el.scrollIntoView({ behavior: "smooth" });
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
+@media screen and (max-width: 600px) {
+  .md-and-up {
+    display: none;
+  }
+}
 /* Header */
 header {
   position: fixed;
