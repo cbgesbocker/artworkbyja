@@ -167,7 +167,7 @@ export default {
 
 <style scoped>
 .artwork-detail {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 120px 2rem 4rem;
   min-height: 100vh;
@@ -192,7 +192,7 @@ export default {
 
 .detail-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 4rem;
   align-items: start;
 }
@@ -200,6 +200,14 @@ export default {
 .detail-image-wrapper {
   position: sticky;
   top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-image-wrapper > .detail-image {
+  max-height: 75vh;
+  object-fit: contain;
+  width: 100%;
 }
 
 .image-container {
@@ -207,6 +215,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  max-height: 75vh;
 }
 
 .detail-image {
@@ -219,6 +228,8 @@ export default {
 
 .image-container .detail-image {
   flex: 1;
+  max-height: 75vh;
+  object-fit: contain;
 }
 
 .nav-btn {
