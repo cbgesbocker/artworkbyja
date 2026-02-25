@@ -1,6 +1,9 @@
 <template>
   <div>
     <section id="hero">
+      <!-- Banner image -->
+      <img src="/images/banner.png" alt="Hero banner" class="hero-banner" />
+
       <!-- Abstract background art -->
       <svg
         class="hero-background"
@@ -17,11 +20,11 @@
           >
             <stop
               offset="0%"
-              style="stop-color: #8b7355; stop-opacity: 0.15"
+              style="stop-color: #1A7A99; stop-opacity: 0.2"
             />
             <stop
               offset="100%"
-              style="stop-color: #d4a574; stop-opacity: 0.05"
+              style="stop-color: #0F5F7D; stop-opacity: 0.08"
             />
           </linearGradient>
           <linearGradient
@@ -33,11 +36,11 @@
           >
             <stop
               offset="0%"
-              style="stop-color: #c9a961; stop-opacity: 0.1"
+              style="stop-color: #2E9FB0; stop-opacity: 0.15"
             />
             <stop
               offset="100%"
-              style="stop-color: #8b7355; stop-opacity: 0.08"
+              style="stop-color: #1A7A99; stop-opacity: 0.1"
             />
           </linearGradient>
         </defs>
@@ -69,7 +72,7 @@
           cy="200"
           r="80"
           fill="none"
-          stroke="#a8956f"
+          stroke="#2E9FB0"
           stroke-width="1.8"
           opacity="0.3"
         />
@@ -78,7 +81,7 @@
           cy="700"
           r="120"
           fill="none"
-          stroke="#c9a961"
+          stroke="#1A7A99"
           stroke-width="1.5"
           opacity="0.25"
         />
@@ -88,7 +91,7 @@
           width="200"
           height="200"
           fill="none"
-          stroke="#8b7355"
+          stroke="#0F5F7D"
           stroke-width="1.8"
           opacity="0.3"
           transform="rotate(25 800 200)"
@@ -96,7 +99,7 @@
         <polygon
           points="200,800 300,700 350,850 280,900"
           fill="none"
-          stroke="#a8956f"
+          stroke="#2E9FB0"
           stroke-width="1.5"
           opacity="0.3"
         />
@@ -107,7 +110,7 @@
           y1="800"
           x2="300"
           y2="750"
-          stroke="#c9a961"
+          stroke="#2E9FB0"
           stroke-width="1.5"
           opacity="0.25"
         />
@@ -116,7 +119,7 @@
           y1="950"
           x2="1000"
           y2="850"
-          stroke="#8b7355"
+          stroke="#0F5F7D"
           stroke-width="1.8"
           opacity="0.3"
         />
@@ -125,7 +128,7 @@
           y1="0"
           x2="350"
           y2="400"
-          stroke="#a8956f"
+          stroke="#1A7A99"
           stroke-width="1.5"
           opacity="0.2"
         />
@@ -134,16 +137,16 @@
           y1="0"
           x2="700"
           y2="500"
-          stroke="#c9a961"
+          stroke="#2E9FB0"
           stroke-width="1.5"
           opacity="0.25"
         />
 
         <!-- Subtle dots -->
-        <circle cx="100" cy="500" r="3" fill="#8b7355" opacity="0.3" />
-        <circle cx="450" cy="150" r="2.5" fill="#a8956f" opacity="0.25" />
-        <circle cx="900" cy="300" r="3" fill="#c9a961" opacity="0.3" />
-        <circle cx="250" cy="900" r="2" fill="#8b7355" opacity="0.2" />
+        <circle cx="100" cy="500" r="3" fill="#0F5F7D" opacity="0.3" />
+        <circle cx="450" cy="150" r="2.5" fill="#1A7A99" opacity="0.25" />
+        <circle cx="900" cy="300" r="3" fill="#2E9FB0" opacity="0.3" />
+        <circle cx="250" cy="900" r="2" fill="#0F5F7D" opacity="0.2" />
       </svg>
 
       <div class="hero-content">
@@ -188,6 +191,18 @@ export default {
   padding-right: 2rem;
   padding-bottom: 6rem;
   overflow: hidden;
+  background: linear-gradient(135deg, #f5fbfd 0%, #eef7f9 100%);
+}
+
+.hero-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.8;
 }
 
 .hero-background {
@@ -196,13 +211,13 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  opacity: 0.55;
+  z-index: 2;
+  opacity: 0.6;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 #hero h1 {
