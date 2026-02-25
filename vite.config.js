@@ -8,6 +8,16 @@ export default defineConfig({
     open: true
   },
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vue': ['vue', 'vue-router']
+        }
+      }
+    }
+  },
+  optimizeDeps: {
+    include: ['vue', 'vue-router']
   }
 })
