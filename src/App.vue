@@ -7,6 +7,8 @@
           <li><a href="#" @click.prevent="scrollTo('gallery')">Gallery</a></li>
           <li><a href="#" @click.prevent="scrollTo('about')">About</a></li>
           <li><a href="#" @click.prevent="scrollTo('contact')">Contact</a></li>
+          <li><a href="https://www.instagram.com/jacoboiii/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="http://ArtworkbyJA.checkoutstores.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
         </ul>
       </nav>
     </header>
