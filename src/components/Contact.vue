@@ -13,7 +13,8 @@
         >
       </p>
       <div class="social-links">
-        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="https://www.instagram.com/jacoboiii/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="http://ArtworkbyJA.checkoutstores.com" target="_blank" rel="noopener noreferrer" aria-label="Shop">Shop</a>
       </div>
     </div>
   </section>
