@@ -15,11 +15,32 @@
 
       <div class="detail-info">
         <h1>{{ piece.title }}</h1>
-        <p v-if="piece.medium" class="detail-medium">{{ piece.medium }}</p>
-        <p v-if="piece.description" class="detail-description">{{ piece.description }}</p>
 
         <div class="detail-meta">
-          <p class="detail-artist">By Jake Allen</p>
+          <dl class="meta-list">
+            <div class="meta-row" v-if="piece.year">
+              <dt>Year</dt>
+              <dd>{{ piece.year }}</dd>
+            </div>
+            <div class="meta-row" v-if="piece.dimensions">
+              <dt>Dimensions</dt>
+              <dd>{{ piece.dimensions }}</dd>
+            </div>
+            <div class="meta-row" v-if="piece.material">
+              <dt>Material</dt>
+              <dd>{{ piece.material }}</dd>
+            </div>
+            <div class="meta-row" v-if="piece.featuredAt">
+              <dt>Featured at</dt>
+              <dd>{{ piece.featuredAt }}</dd>
+            </div>
+            <div class="meta-row" v-if="piece.availability">
+              <dt>Availability</dt>
+              <dd :class="['availability', piece.availability === 'For Sale' ? 'for-sale' : 'sold']">
+                {{ piece.availability }}
+              </dd>
+            </div>
+          </dl>
         </div>
 
         <router-link :to="{ path: '/', hash: '#gallery' }" class="back-button">&larr; Back to Gallery</router-link>
@@ -124,33 +145,53 @@ export default {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 400;
   letter-spacing: -0.01em;
-  margin-bottom: 1rem;
-}
-
-.detail-medium {
-  font-size: 1.05rem;
-  color: var(--color-text-light);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
-}
-
-.detail-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--color-text);
   margin-bottom: 2rem;
 }
 
+/* Metadata table */
 .detail-meta {
-  padding-top: 1.5rem;
   border-top: 1px solid var(--color-border);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-.detail-artist {
-  font-size: 0.95rem;
+.meta-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.meta-row dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--color-text-light);
+  padding-top: 0.1em;
+}
+
+.meta-row dd {
+  font-size: 0.97rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.availability {
+  font-weight: 500;
   letter-spacing: 0.03em;
+}
+
+.availability.for-sale {
+  color: #2d6a4f;
+}
+
+.availability.sold {
+  color: var(--color-text-light);
 }
 
 .back-button {
@@ -194,6 +235,10 @@ export default {
 
   .detail-image-wrapper {
     position: static;
+  }
+
+  .meta-row {
+    grid-template-columns: 110px 1fr;
   }
 }
 </style>

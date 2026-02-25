@@ -2,51 +2,69 @@
   "artist": {
     "name": "Jake Allen",
     "email": "studioja@yahoo.com",
-    "bio": "My work is shaped by lived experience—family, nature, responsibility, and the constant push to see beyond what’s expected. I am an artist, husband, and father to a son living in Wyoming, creating from a place where freedom, land, and reflection still matter. My family also shares life with a silver Labrador, a quiet constant tied to time outdoors and everyday rhythm. Growing up just south of Chicago taught me to see the world from multiple angles and question the obvious. That instinct continues to drive my work today: challenging perspective, expanding possibility, and inviting others to see through my eyes. Inspiration comes from family, the natural world, and forward-thinking systems like Bitcoin—ideas rooted in sovereignty, discipline, and long-term vision—which influence where I want my work to go. My art has been featured on television, painted into private spaces, and shared through partnerships with companies and individuals who value originality. These experiences shaped my respect for anyone willing to pursue what they believe in, regardless of outcome. For me, art represents motion—growth, freedom, and the continuous expansion of imagination as both a craft and a way of life.",
+    "bio": "My work is shaped by lived experience—family, nature, responsibility, and the constant push to see beyond what's expected. I am an artist, husband, and father to a son living in Wyoming, creating from a place where freedom, land, and reflection still matter. My family also shares life with a silver Labrador, a quiet constant tied to time outdoors and everyday rhythm. Growing up just south of Chicago taught me to see the world from multiple angles and question the obvious. That instinct continues to drive my work today: challenging perspective, expanding possibility, and inviting others to see through my eyes. Inspiration comes from family, the natural world, and forward-thinking systems like Bitcoin—ideas rooted in sovereignty, discipline, and long-term vision—which influence where I want my work to go. My art has been featured on television, painted into private spaces, and shared through partnerships with companies and individuals who value originality. These experiences shaped my respect for anyone willing to pursue what they believe in, regardless of outcome. For me, art represents motion—growth, freedom, and the continuous expansion of imagination as both a craft and a way of life.",
     "location": "Casper, Wyoming"
   },
   "gallery": [
     {
       "id": 1,
-      "title": "BTC Slots",
-      "medium": "",
-      "image": "1.JPG",
-      "description": "Bitcoin slots"
+      "title": "Viva Las Bitcoin",
+      "year": 2025,
+      "dimensions": "24x24\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": "Bitcoin Ben's Las Vegas Club",
+      "availability": "Sold",
+      "image": "1.JPG"
     },
     {
       "id": 2,
-      "title": "Megatron",
-      "medium": "",
-      "image": "2.JPG",
-      "description": "Optional description"
+      "title": "Satoshoid",
+      "year": 2024,
+      "dimensions": "30x40\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "2.JPG"
     },
     {
       "id": 3,
-      "title": "Paper Planes",
-      "medium": "",
-      "image": "3.JPG",
-      "description": "Optional description"
+      "title": "Dollars Down",
+      "year": 2024,
+      "dimensions": "18x24\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": "Bitcoin Magazine May 2025 - Freedom Issue",
+      "availability": "Sold",
+      "image": "3.JPG"
     },
     {
       "id": 4,
-      "title": "Abstract",
-      "medium": "",
-      "image": "4.JPG",
-      "description": "Bitcoin slots"
+      "title": "Spacescape",
+      "year": 2023,
+      "dimensions": "30x40\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "4.JPG"
     },
     {
       "id": 5,
-      "title": "BTC Bull",
-      "medium": "",
-      "image": "5.JPEG",
-      "description": "Optional description"
+      "title": "Mt. Fuji Bull Run",
+      "year": 2025,
+      "dimensions": "12x24\"",
+      "material": "Acrylic on Digital Canvas",
+      "featuredAt": "Scarce.City Marketplace",
+      "availability": "For Sale",
+      "image": "5.JPEG"
     },
     {
       "id": 6,
-      "title": "Abstract",
-      "medium": "",
-      "image": "6.PNG",
-      "description": "Optional description"
+      "title": "Christopher Hitchens",
+      "year": 2017,
+      "dimensions": "36x36\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "6.PNG"
     }
   ]
 }
