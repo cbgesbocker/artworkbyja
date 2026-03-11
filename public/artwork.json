@@ -98,6 +98,16 @@
       "featuredAt": null,
       "availability": "Sold",
       "image": "6.PNG"
+    },
+    {
+      "id": 9,
+      "title": "Mine your Business",
+      "year": 2025,
+      "dimensions": "18x24\"",
+      "material": "Acrylic on Canvas w/ Gold Flake",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "19.jpg"
     }
   ]
 }
