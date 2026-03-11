@@ -7,14 +7,16 @@
   },
   "gallery": [
     {
-      "id": 1,
-      "title": "Viva Las Bitcoin",
-      "year": 2025,
-      "dimensions": "24x24\"",
-      "material": "Acrylic on Canvas",
-      "featuredAt": "Bitcoin Ben's Las Vegas Club",
-      "availability": "Sold",
-      "image": "1.JPG"
+      "id": 8,
+      "title": "Federal Ender",
+      "year": 2026,
+      "material": "African Mahogany Wood with Graphic Pen Illustration",
+      "collaboration": "ArtworkbyJA x J.L.H Guitars",
+      "artists": ["Jake Allen", "Joe Hoffman"],
+      "featuredAt": "2026 Bitcoin Conference",
+      "availability": "For Sale",
+      "image": "11.jpg",
+      "altImages": ["13.jpg", "14.jpg", "15.jpg", "16.jpg", "19.png"]
     },
     {
       "id": 5,
@@ -25,16 +27,6 @@
       "featuredAt": "Scarce.City Marketplace",
       "availability": "For Sale",
       "image": "5.JPEG"
-    },
-    {
-      "id": 2,
-      "title": "Satoshoid",
-      "year": 2024,
-      "dimensions": "30x40\"",
-      "material": "Acrylic on Canvas",
-      "featuredAt": null,
-      "availability": "Sold",
-      "image": "2.JPG"
     },
     {
       "id": 7,
@@ -48,6 +40,36 @@
       "altImages": ["9.jpg"]
     },
     {
+      "id": 1,
+      "title": "Viva Las Bitcoin",
+      "year": 2025,
+      "dimensions": "24x24\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": "Bitcoin Ben's Las Vegas Club",
+      "availability": "Sold",
+      "image": "1.JPG"
+    },
+    {
+      "id": 9,
+      "title": "Mine your Business",
+      "year": 2025,
+      "dimensions": "18x24\"",
+      "material": "Acrylic on Canvas w/ Gold Flake",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "19.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Satoshoid",
+      "year": 2024,
+      "dimensions": "30x40\"",
+      "material": "Acrylic on Canvas",
+      "featuredAt": null,
+      "availability": "Sold",
+      "image": "2.JPG"
+    },
+    {
       "id": 3,
       "title": "Dollars Down",
       "year": 2024,
@@ -56,18 +78,6 @@
       "featuredAt": "Bitcoin Magazine May 2025 - Freedom Issue",
       "availability": "Sold",
       "image": "3.JPG"
-    },
-    {
-      "id": 8,
-      "title": "Federal Ender",
-      "year": 2026,
-      "material": "African Mahogany Wood with Graphic Pen Illustration",
-      "collaboration": "ArtworkbyJA x J.L.H Guitars",
-      "artists": ["Jake Allen", "Joe Hoffman"],
-      "featuredAt": "2026 Bitcoin Conference",
-      "availability": "For Sale",
-      "image": "11.jpg",
-      "altImages": ["13.jpg", "14.jpg", "15.jpg", "16.jpg", "19.png"]
     },
     {
       "id": 4,
@@ -88,16 +98,6 @@
       "featuredAt": null,
       "availability": "Sold",
       "image": "6.PNG"
-    },
-    {
-      "id": 9,
-      "title": "Mine your Business",
-      "year": 2025,
-      "dimensions": "18x24\"",
-      "material": "Acrylic on Canvas w/ Gold Flake",
-      "featuredAt": null,
-      "availability": "Sold",
-      "image": "19.jpg"
     }
   ]
 }
